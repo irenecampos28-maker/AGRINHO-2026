@@ -34,8 +34,10 @@ botoesCTA.forEach(botao => {
 
 
 // ==========================
-// 3. Animação simples ao rolar (efeito de entrada)
+// 3. Animação ao rolar (IntersectionObserver)
 // ==========================
+
+// 3.1 Criando o observer
 const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
         if (entry.isIntersecting) {
@@ -44,6 +46,8 @@ const observer = new IntersectionObserver(entries => {
     });
 });
 
+
+// 3.2 Aplicando nas seções
 document.querySelectorAll('section').forEach(section => {
     section.classList.add('hidden');
     observer.observe(section);
